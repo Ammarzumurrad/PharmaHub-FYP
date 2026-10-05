@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_50"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- CardView for product images -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProductImages"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPagerProductImages"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageClose"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/bg_rounded_white"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/g_black" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Title and Price Row -->
+        <LinearLayout
+            android:id="@+id/linearTitlePrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardProductImages">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                style="@style/h3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Paracetamol 500mg Tablet"
+                android:textColor="@color/g_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvProductPrice"
+                style="@style/h3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="৳25.00"
+                android:textColor="@color/g_gray700"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Prescription Info -->
+        <TextView
+            android:id="@+id/tvPrescriptionInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_prescription_required"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Prescription Required"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearTitlePrice" />
+
+        <!-- Generic Name Text -->
+        <TextView
+            android:id="@+id/tvGenericName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Paracetamol"
+            android:textColor="@color/g_gray700"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPrescriptionInfo" />
+
+        <!-- Product Description -->
+        <TextView
+            android:id="@+id/tvProductDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="0dp"
+            android:text="Description goes here..."
+            android:textColor="@color/g_gray700"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGenericName" />
+
+        <!-- Divider Line -->
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/g_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProductDescription" />
+
+        <!-- Medicine Details -->
+        <LinearLayout
+            android:id="@+id/linearMedicineDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="0dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topLine">
+
+            <TextView
+                android:id="@+id/tvDosageFormLabel"
+                style="@style/h3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dosage Form"
+                android:textColor="@color/g_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDosageForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Tablet"
+                android:textColor="@color/g_gray700" />
+
+            <TextView
+                android:id="@+id/tvStrengthLabel"
+                style="@style/h3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Strength"
+                android:textColor="@color/g_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStrengthValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="500mg"
+                android:textColor="@color/g_gray700"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvStrengths"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:listitem="@layout/strength_rv_item" />
+
+            <TextView
+                android:id="@+id/tvManufacturerLabel"
+                style="@style/h3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Manufacturer"
+                android:textColor="@color/g_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvManufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Square Pharmaceuticals Ltd."
+                android:textColor="@color/g_gray700" />
+        </LinearLayout>
+
+        <!-- Add to Cart Button -->
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/buttonAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/mediumButtonHeight"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="Add to Cart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearMedicineDetails"
+            app:spinning_bar_color="@color/white"
+            style="@style/blueButtonStyle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
